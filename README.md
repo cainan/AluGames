@@ -1,13 +1,20 @@
 # AluGames
 Project using Kotlin to consume an API
 
-This project helps to learn some stuff of Kotlin Language.
 
+This project aims to explore and learn about the Kotlin language, exploring its features and differences in relation to Java
+
+## Main Features
 - Consume Web API using HttpClient
 - Implement iterative logic using loops
 - Create and manipulate lists
 - Define relationships between classes
 - Perform list operations such as sorting, filtering and removing elements
+- Explore scope functions
 - Use extension functions
 - Use runCatching
 - etc...
+
+
+based on Kotlin Formation course at @Alura:
+https://cursos.alura.com.br/formacao-kotlin
