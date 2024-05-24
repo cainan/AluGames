@@ -29,6 +29,7 @@ data class Gamer(
 
     val searchedGames = mutableListOf<Game?>()
     val rentedGames = mutableListOf<Rent>()
+    var plan: Plan = SeparatePlan("BRONZE")
 
 
     constructor(name: String, email: String, birth: String, username: String) : this(name, email) {
@@ -59,6 +60,14 @@ data class Gamer(
 
     fun rentAGame(game: Game, period: RentPeriod): Rent {
         return Rent(this, game, period).also { rentedGames.add(it) }
+    }
+
+    fun getGamesRentedInMonth(month: Int): List<Game> {
+        return rentedGames.filter { it.period.startDate.monthValue == month }.map { rent -> rent.game }
+    }
+
+    fun getGamesRented(): List<Rent> {
+        return rentedGames
     }
 
     companion object {

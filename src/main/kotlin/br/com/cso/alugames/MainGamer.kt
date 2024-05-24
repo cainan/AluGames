@@ -1,6 +1,7 @@
 package br.com.cso.alugames
 
 import br.com.cso.alugames.model.RentPeriod
+import br.com.cso.alugames.model.SignaturePlan
 import br.com.cso.alugames.services.SharkApi
 import java.time.LocalDate
 
@@ -28,5 +29,16 @@ fun main() {
     gamer.rentedGames.forEach {
         println(it)
     }
+    println()
 
+    val newGamer = listGamers[5]
+    newGamer.plan = SignaturePlan("PRATA", 9.90, 3)
+    newGamer.rentAGame(game, RentPeriod(LocalDate.now(), LocalDate.now().plusDays(2L)))
+    newGamer.rentAGame(listGames[2], RentPeriod(LocalDate.now(), LocalDate.now().plusDays(3L)))
+    newGamer.rentAGame(listGames[3], RentPeriod(LocalDate.now(), LocalDate.now().plusDays(4L)))
+    newGamer.rentAGame(listGames[3], RentPeriod(LocalDate.now(), LocalDate.now().plusDays(4L)))
+    newGamer.rentAGame(listGames[3], RentPeriod(LocalDate.now(), LocalDate.now().plusDays(4L)))
+    newGamer.rentedGames.forEach {
+        println(it)
+    }
 }
