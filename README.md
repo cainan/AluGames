@@ -8,11 +8,13 @@ This project aims to explore and learn about the Kotlin language, exploring its 
 - Consume Web API using HttpClient
 - Implement iterative logic using loops
 - Create and manipulate lists
-- Define relationships between classes
+- Define relationships between classes (inheritance and polymorphism)
 - Perform list operations such as sorting, filtering and removing elements
 - Explore scope functions
 - Use extension functions
 - Use runCatching
+- Write a file
+- Serialize json
 - etc...
 
 
