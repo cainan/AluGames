@@ -6,7 +6,7 @@ import kotlin.random.Random
 data class Gamer(
     var name: String,
     var email: String,
-) {
+) : Recommendable {
 
     // it runs before create the object
     init {
@@ -30,6 +30,8 @@ data class Gamer(
     val searchedGames = mutableListOf<Game?>()
     val rentedGames = mutableListOf<Rent>()
     var plan: Plan = SeparatePlan("BRONZE")
+    private val gradeList = mutableListOf<Int>()
+    val recommendedGames = mutableListOf<Game>()
 
 
     constructor(name: String, email: String, birth: String, username: String) : this(name, email) {
@@ -38,8 +40,20 @@ data class Gamer(
         createIdentifier()
     }
 
+    override val average: Double
+        get() = gradeList.average()
+
+    override fun recommend(grade: Int) {
+        gradeList.add(grade)
+    }
+
+    fun recommendGame(game: Game, grade : Int) {
+        game.recommend(grade)
+        recommendedGames.add(game)
+    }
+
     override fun toString(): String {
-        return "Gamer(name='$name', email='$email', birth=$birth, username=$username, identifier=$identifier)"
+        return "Gamer(name='$name', email='$email', birth=$birth, username=$username, identifier=$identifier, reputation=$average)"
     }
 
     private fun createIdentifier() {
