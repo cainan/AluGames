@@ -16,6 +16,7 @@ data class Gamer(
         }
     }
 
+    var id = 0
     var birth: String? = null
     var username: String? = null
         set(value) {
@@ -34,9 +35,10 @@ data class Gamer(
     val recommendedGames = mutableListOf<Game>()
 
 
-    constructor(name: String, email: String, birth: String, username: String) : this(name, email) {
+    constructor(name: String, email: String, birth: String, username: String, id: Int = 0) : this(name, email) {
         this.birth = birth
         this.username = username
+        this.id = id
         createIdentifier()
     }
 
@@ -47,13 +49,13 @@ data class Gamer(
         gradeList.add(grade)
     }
 
-    fun recommendGame(game: Game, grade : Int) {
+    fun recommendGame(game: Game, grade: Int) {
         game.recommend(grade)
         recommendedGames.add(game)
     }
 
     override fun toString(): String {
-        return "Gamer(name='$name', email='$email', birth=$birth, username=$username, identifier=$identifier, reputation=$average)"
+        return "Gamer(name='$name', email='$email', birth=$birth, username=$username, identifier=$identifier, reputation=$average, id=$id)"
     }
 
     private fun createIdentifier() {

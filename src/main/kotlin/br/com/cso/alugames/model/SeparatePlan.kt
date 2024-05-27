@@ -1,6 +1,6 @@
 package br.com.cso.alugames.model
 
-class SeparatePlan(type: String) : Plan(type) {
+class SeparatePlan(type: String, id: Int = 0) : Plan(type, id) {
 
     override fun calculatePrice(rent: Rent): Double {
         var originalPrice = super.calculatePrice(rent)

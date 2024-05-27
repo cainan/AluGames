@@ -1,9 +1,14 @@
 package br.com.cso.alugames.model
 
-import jdk.jfr.Percentage
 import java.time.LocalDate
 
-class SignaturePlan(type: String, val monthlyPrice: Double, val gamesIncluded: Int, val discountPercentage: Double) : Plan(type) {
+class SignaturePlan(
+    type: String,
+    val monthlyPrice: Double,
+    val gamesIncluded: Int,
+    val discountPercentage: Double,
+    id: Int = 0
+) : Plan(type, id) {
 
     override fun calculatePrice(rent: Rent): Double {
         val totalMonthlyGames = rent.gamer.getGamesRentedInMonth(LocalDate.now().monthValue) + 1
