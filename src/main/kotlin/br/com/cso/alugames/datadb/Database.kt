@@ -1,6 +1,5 @@
 package br.com.cso.alugames.datadb
 
-import br.com.cso.alugames.model.Game
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.SQLException
@@ -16,10 +15,4 @@ object Database {
             null
         }
     }
-
-    fun getGames(): List<Game> {
-        TODO("Not yet implemented")
-    }
-
-
 }
