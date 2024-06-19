@@ -10,22 +10,31 @@ fun main() {
 //    val db = Database.getConnection()
 //    println(db)
 
-    val gameToSave = Game("GoT", "CoverGoT", 99.99, "Ghost Of t")
+//    val gameToSave = Game("GoT", "CoverGoT", 99.99, "Ghost Of t")
     val manager = Database.getEntityManager()
     val gameDAO = GameDAO(manager)
-//    gameDAO.saveGame(gameToSave)
+////    gameDAO.add(gameToSave)
 
-    val gameList: List<Game> = gameDAO.getGames()
-    println(gameList)
+//    val gameList: List<Game> = gameDAO.getList()
+//    println(gameList)
 
 
-    println("-------")
-    val gamerToSave = Gamer(name = "GamerTeste", email = "cs@gm.cm", birth = "23/10/2000", username = "userTeste")
-    val gamerDAO = GamerDAO(manager)
-    gamerDAO.saveGamer(gamerToSave)
+//    println("-------")
+//    val gamerToSave = Gamer(name = "GamerTeste", email = "cs@gm.cm", birth = "23/10/2000", username = "userTeste")
+//    val gamerDAO = GamerDAO(manager)
+////    gamerDAO.add(gamerToSave)
+//
+//    val gamerList: List<Gamer> = gamerDAO.getList()
+//    println(gamerList)
 
-    val gamerList: List<Gamer> = gamerDAO.getGamers()
-    println(gamerList)
+
+    val gameRetrieved = gameDAO.getById(1)
+    println(gameRetrieved)
+
+    gameDAO.remove(gameRetrieved.id)
+
+    val gameList2: List<Game> = gameDAO.getList()
+    println(gameList2)
 
     manager.close()
 }

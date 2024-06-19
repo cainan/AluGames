@@ -5,30 +5,24 @@ import br.com.cso.alugames.model.Gamer
 import javax.persistence.EntityManager
 
 
-class GamerDAO(val manager: EntityManager) {
+class GamerDAO(manager: EntityManager) : DAO<Gamer, GamerEntity>(manager, GamerEntity::class.java) {
 
-    fun saveGamer(gamerToSave: Gamer) {
-        val entity = GamerEntity(
-            name = gamerToSave.name,
-            email = gamerToSave.email,
-            birth = gamerToSave.birth ?: "",
-            username = gamerToSave.username ?: ""
+    override fun toEntity(data: Gamer): GamerEntity {
+        return GamerEntity(
+            name = data.name,
+            email = data.email,
+            birth = data.birth ?: "",
+            username = data.username ?: ""
         )
-        manager.transaction.begin()
-        manager.persist(entity)
-        manager.transaction.commit()
     }
 
-    fun getGamers(): List<Gamer> {
-        val query = manager.createQuery("FROM GamerEntity", GamerEntity::class.java)
-        return query.resultList.map {
-            Gamer(
-                name = it.name,
-                email = it.email,
-                birth = it.birth,
-                username = it.username,
-                id = it.id
-            )
-        }
+    override fun toModel(entity: GamerEntity): Gamer {
+        return Gamer(
+            name = entity.name,
+            email = entity.email,
+            birth = entity.birth,
+            username = entity.username,
+            id = entity.id
+        )
     }
 }
