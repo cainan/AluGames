@@ -55,7 +55,7 @@ data class Gamer(
     }
 
     override fun toString(): String {
-        return "Gamer(name='$name', email='$email', birth=$birth, username=$username, identifier=$identifier, reputation=$average, id=$id)"
+        return "Gamer(name='$name', email='$email', birth=$birth, username=$username, identifier=$identifier, reputation=$average, id=$id), plan=$plan"
     }
 
     private fun createIdentifier() {

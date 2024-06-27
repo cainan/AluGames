@@ -19,5 +19,8 @@ class GamerEntity(
     val birth: String = "",
 
     @Column(name = "usuario")
-    val username: String = ""
+    val username: String = "",
+
+    @ManyToOne
+    val plan: PlanEntity = SeparatePlanEntity(),
 )

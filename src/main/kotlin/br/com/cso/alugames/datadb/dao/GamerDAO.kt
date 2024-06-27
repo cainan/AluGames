@@ -2,6 +2,8 @@ package br.com.cso.alugames.datadb.dao
 
 import br.com.cso.alugames.datadb.entity.GamerEntity
 import br.com.cso.alugames.model.Gamer
+import br.com.cso.alugames.utility.toEntity
+import br.com.cso.alugames.utility.toModel
 import javax.persistence.EntityManager
 
 
@@ -12,7 +14,8 @@ class GamerDAO(manager: EntityManager) : DAO<Gamer, GamerEntity>(manager, GamerE
             name = data.name,
             email = data.email,
             birth = data.birth ?: "",
-            username = data.username ?: ""
+            username = data.username ?: "",
+            plan = data.plan.toEntity()
         )
     }
 
@@ -22,7 +25,7 @@ class GamerDAO(manager: EntityManager) : DAO<Gamer, GamerEntity>(manager, GamerE
             email = entity.email,
             birth = entity.birth,
             username = entity.username,
-            id = entity.id
-        )
+            id = entity.id,
+        ).apply { plan = entity.plan.toModel() }
     }
 }

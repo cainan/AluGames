@@ -6,9 +6,9 @@ import javax.persistence.*
 @Table(name = "plans")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "planType", discriminatorType = DiscriminatorType.STRING)
-sealed class PlanEntity(val type: String,
+sealed class PlanEntity(open val type: String = "",
                         @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-                        val id : Int = 0)
+                        open var id : Int = 0,)
 
 @Entity
 @DiscriminatorValue(value = "plan")

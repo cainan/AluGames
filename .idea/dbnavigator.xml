@@ -24,7 +24,10 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" object-ref="schemas/alugames/tables/plans" />
+      <object connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" object-ref="schemas/alugames/tables/gamer" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="7e5c84de-5799-4199-bb59-2caaca13655f" />
@@ -32,7 +35,7 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" dataset="alugames.jogos" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" dataset="alugames.plans" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" dataset="alugames.gamer" active-filter-id="">
+    <filter-actions connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" dataset="alugames.gamer" active-filter-id="EMPTY_FILTER">
       <filter id="a3668152-b029-48b1-ac25-2a47a4c5fcc3" name="select     g.email,     g.id,     g.nasc..." temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="select     g.email,     g.id,     g.nascimento,     g.nome,     g.usuario from     gamer g;" active="true" />
       </filter>
@@ -44,6 +47,9 @@
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
+  </component>
+  <component name="DBNavigator.Project.ParserDiagnosticsManager">
+    <diagnostics-history />
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
     <recently-used-interfaces />
