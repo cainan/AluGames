@@ -13,7 +13,7 @@ fun Game.toEntity() : GameEntity {
     )
 }
 
-fun Game.toModel() : Game {
+fun GameEntity.toModel() : Game {
     return Game(
         id = this.id,
         cover = this.cover,

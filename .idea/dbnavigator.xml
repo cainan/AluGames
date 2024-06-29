@@ -25,14 +25,16 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" object-ref="schemas/alugames/tables/plans" />
       <object connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" object-ref="schemas/alugames/tables/gamer" />
+      <object connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" object-ref="schemas/alugames/tables/rent" />
+      <object connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" object-ref="schemas/alugames/tables/jogos" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="7e5c84de-5799-4199-bb59-2caaca13655f" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" dataset="alugames.rent" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" dataset="alugames.jogos" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" dataset="alugames.plans" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="7e5c84de-5799-4199-bb59-2caaca13655f" dataset="alugames.gamer" active-filter-id="EMPTY_FILTER">
