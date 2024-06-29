@@ -15,7 +15,7 @@ This project aims to explore and learn about the Kotlin language, exploring its 
 - Use runCatching
 - Write a file
 - Serialize json
-- etc...
+- Use Hibernate to persist data into DB
 
 
 based on Kotlin Formation course at @Alura:
